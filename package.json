@@ -1,0 +1,37 @@
+{
+  "name": "phonetic-learn",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "author": "任凯歌 <renkaige6735@163.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "22.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renkaige5/phoneticSymbols"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:single": "node scripts/build-single.mjs",
+    "tauri": "tauri",
+    "start:electron": "npm run build && electron .",
+    "predist:win": "node scripts/ensure-7za-wrapper.mjs",
+    "predist:win32": "node scripts/ensure-7za-wrapper.mjs",
+    "dist:win": "npm run build && set ELECTRON_BUILDER_CACHE=.cache\\electron-builder&& set ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/&& set ELECTRON_BUILDER_7ZA=%INIT_CWD%\\scripts\\bin\\7za.exe&& set TEMP=%INIT_CWD%\\.cache\\tmp&& set TMP=%INIT_CWD%\\.cache\\tmp&& electron-builder --win nsis --x64",
+    "dist:win32": "npm run build && set ELECTRON_BUILDER_CACHE=.cache\\electron-builder&& set ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/&& set ELECTRON_BUILDER_7ZA=%INIT_CWD%\\scripts\\bin\\7za.exe&& set TEMP=%INIT_CWD%\\.cache\\tmp&& set TMP=%INIT_CWD%\\.cache\\tmp&& electron-builder --win nsis --ia32"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4",
+    "@tauri-apps/plugin-sql": "2.6.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3",
+    "vite": "6.4.6"
+  }
+}

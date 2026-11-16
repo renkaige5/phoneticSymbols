@@ -1,0 +1,37 @@
+# 依赖与缓存
+node_modules/
+.cache/
+.vite/
+
+# 打包产物
+dist/
+dist-单文件/
+release/
+out/
+*.zip
+
+# 本地下载的 7-Zip，打包脚本会按需准备
+scripts/bin/
+
+# Tauri 编译输出
+src-tauri/target/
+src-tauri/gen/
+
+# 对照用的原始录音，构建和运行都不读取
+review/
+
+# 环境变量与日志
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp

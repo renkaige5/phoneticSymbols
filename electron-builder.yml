@@ -1,0 +1,26 @@
+appId: com.phoneticlearn.desktop
+productName: 音标学习
+copyright: Copyright © 2026
+directories:
+  output: release
+# 使用已安装的 Electron，避免打包时再从 GitHub 分段下载（Windows 上常因缓存分片被拒绝写入而失败）
+electronDist: node_modules/electron/dist
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+asar: true
+win:
+  icon: src-tauri/icons/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: 音标学习
+  artifactName: 音标学习-${version}-安装包.exe
+  deleteAppDataOnUninstall: false
