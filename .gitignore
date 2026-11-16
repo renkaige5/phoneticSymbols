@@ -17,9 +17,6 @@ scripts/bin/
 src-tauri/target/
 src-tauri/gen/
 
-# 对照用的原始录音，构建和运行都不读取
-review/
-
 # 环境变量与日志
 .env
 .env.*
